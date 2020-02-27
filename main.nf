@@ -2,7 +2,6 @@ seqs = Channel.fromPath('testfiles/seqs.fasta')
 refpkg = 'testfiles/bei-hm27-plus-1.0.refpkg/'
 
 process taxon_file {
-    // value channel - https://www.nextflow.io/docs/latest/channel.html#value-channel
     container 'taxtastic:0.8.11'
 
     label 'med_cpu_mem'
@@ -12,6 +11,7 @@ process taxon_file {
         file('seq_info.csv') from file(refpkg + 'lonelyfilled.seqinfo.csv')
 
     output:
+        // value channel - https://www.nextflow.io/docs/latest/channel.html#value-channel
         file('ref_taxonomy.txt') into ref_taxonomy
 
     """
@@ -21,7 +21,6 @@ process taxon_file {
 
 process cmalign {
     label 'med_cpu_mem'
-    // 8 CPUs, 8 GB mem
 
     input:
         file('seqs.fasta') from seqs
@@ -79,7 +78,7 @@ process epa {
         file('epa_result.jplace') into placements
 
     """
-    epa-ng --model ${model} --ref-msa refalign.fa --tree tree.txt --query query.fa
+    epa-ng --model ${model} --query query.fa --ref-msa refalign.fa --tree tree.txt
     """
 }
 
