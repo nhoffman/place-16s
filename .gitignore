@@ -1,2 +1,5 @@
 *-env
 output
+.nextflow*
+work/
+*.refpkg
