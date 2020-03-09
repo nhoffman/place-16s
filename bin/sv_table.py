@@ -2,17 +2,6 @@
 import sys
 import argparse
 import pandas
-from collections import OrderedDict
-
-RANKS = OrderedDict(
-    [('k', 'kingdom'),
-     ('p', 'phylum'),
-     ('c', 'class'),
-     ('o', 'order'),
-     ('f', 'family'),
-     ('g', 'genus'),
-     ('s', 'species')]
-)
 
 
 def main(arguments):
