@@ -27,8 +27,6 @@ process taxon_file {
 }
 
 process cmalign {
-    container 'infernal:1.1.3'
-
     label 'med_cpu_mem'
 
     input:
@@ -44,8 +42,6 @@ process cmalign {
 }
 
 process merge {
-    container 'infernal:1.1.3'
-
     label 'med_cpu_mem'
 
     input:
@@ -61,8 +57,6 @@ process merge {
 }
 
 process get_model_descriptor {
-    container 'python:3.6.7-stretch'
-
     label 'med_cpu_mem'
 
     input:
@@ -77,8 +71,6 @@ process get_model_descriptor {
 }
 
 process epa {
-    container 'epa-ng:v0.3.6'
-
     label 'med_cpu_mem'
 
     input:
@@ -96,8 +88,6 @@ process epa {
 }
 
 process gappa {
-    container 'gappa:v0.6.0'
-
     label 'med_cpu_mem'
 
     input:
@@ -113,8 +103,6 @@ process gappa {
 }
 
 process get_classifications {
-    container 'python:3.6.7-stretch'
-
     label 'med_cpu_mem'
 
     input:
@@ -132,8 +120,6 @@ process get_classifications {
 }
 
 process sv_table {
-    container 'pandas:1.0.1'
-
     label 'med_cpu_mem'
 
     input:
