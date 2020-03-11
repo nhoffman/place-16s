@@ -26,7 +26,6 @@ RUN mkdir -p /usr/local/src && \
     cp bin/gappa /usr/local/bin
 
 # infernal 1.1.3
-RUN pip3 install fastalite
 RUN mkdir -p /usr/local/src && \
     cd /usr/local/src && \
     wget --no-check-certificate http://eddylab.org/infernal/infernal-1.1.3-linux-intel-gcc.tar.gz && \
